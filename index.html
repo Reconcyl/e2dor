@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="main.css" />
+        <title>E2Dor Workspace</title>
+    </head>
+    <body>
+        <table class="main"><tbody><tr>
+            <td><table class="grid"></table></td>
+            <td class="settings">
+                <h2>Settings</h2>
+                <select class="menu-select" oninput="TODO('Menu select');">
+                    <option>Board</option>
+                    <option selected>Help</option>
+                    <option>Import / Export</option>
+                </select>
+                <div class="board-menu" style="display: none;">
+                    <p>Rotate:</p>
+                    <button class="arrow-icon" onclick="TODO('Rotate left');">&circlearrowright;</button>
+                    <button class="arrow-icon" onclick="TODO('Rotate right');">&circlearrowleft;</button>
+                    <button class="arrow-icon" onclick="TODO('Flip horizontal');">&harr;</button>
+                    <button class="arrow-icon" onclick="TODO('Flip vertical');">&varr;</button>
+                    <p>Writing mode:</p>
+                    <select oninput="TODO('Change writing mode');">
+                        <option selected>OVR</option>
+                        <option>INS</option>
+                    </select>
+                    <p>
+                        Blank character:
+                        <input class="blank-input" value=" "
+                            onclick="this.select();"
+                            oninput="TODO('Change blank character');" />
+                    </p>
+                </div>   
+                <div class="help-menu">
+                    <table><tbody>
+                        <tr>
+                            <td>Click</td>
+                            <td>Select / unselect.</td>
+                        </tr>
+                        <tr>
+                            <td>Any character</td>
+                            <td>Write character under cursor.</td>
+                        </tr>
+                        <tr>
+                            <td>Arrows</td>
+                            <td>Move selection and point cursor.</td>
+                        </tr>
+                        <tr>
+                            <td>Shift+Arrows</td>
+                            <td>Resize selection.</td>
+                        </tr>
+                        <tr>
+                            <td>Alt+Arrows</td>
+                            <td>Change direction without moving.</td>
+                        </tr>
+                        <tr>
+                            <td>Alt+Shift+Arrows</td>
+                            <td>Move cursor without pointing it.</td>
+                        </tr>
+                        <tr>
+                            <td>Ctrl+Arrows</td>
+                            <td>Pull selection.</td>
+                        </tr>
+                        <tr>
+                            <td>Ctrl+Shift+Arrows</td>
+                            <td>Scroll.</td>
+                        </tr>
+                        <tr>
+                            <td>Backspace</td>
+                            <td>Delete selection.</td>
+                        </tr>
+                        <tr>
+                            <td>CTRL+C</td>
+                            <td>Copy selection.</td>
+                        </tr>
+                        <tr>
+                            <td>CTRL+X</td>
+                            <td>Copy and delete selection.</td>
+                        </tr>
+                        <tr>
+                            <td>CTRL+V</td>
+                            <td>Paste selection.</td>
+                        </tr>
+                        <tr>
+                            <td>CTRL+W</td>
+                            <td>Switch between INS and OVR mode.</td>
+                        </tr>
+                        <tr>
+                            <td>Esc</td>
+                            <td>Unselect.</td>
+                        </tr>
+                        <tr>
+                            <td>Tab</td>
+                            <td>
+                                Move forward
+                                <input type="number" class="tab-size-input" min="3" max="10" value="4"
+                                    oninput="TODO('Update tab size');" />
+                                spaces.
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </div>
+                <div class="import-export-menu" style="display: none;">
+                    <p>Export as text:</p>
+                    <textarea class="export-box" readonly>example</textarea>
+                    <button onclick="TODO('Export');">Export</button>
+                    <input class="padding-input" type="checkbox" /> Pad lines
+                    <p>Import text:</p>
+                    <textarea class="import-box"></textarea>
+                    <button onclick="TODO('Import');">Import</button>
+                    <button onclick="TODO('Import and copy');">Copy to clipboard</button>
+                </div>
+            </td>
+        </tr></tbody></table>
+        <script src="main.js"></script>
+    </body>
+</html>

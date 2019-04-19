@@ -1,0 +1,4 @@
+# Swap files
+**/*.swp
+# Original files
+old_*.*
